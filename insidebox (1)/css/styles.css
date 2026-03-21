@@ -1,3 +1,125 @@
+:root {
+    --grey: #727B81;
+    --othergrey: #666F74;
+    --lightergrey: #DDDDDD;
+    --blue: #0A91DE;
+}
+
 body {
-    background-color: #eee;
+    display: flex;
+    background-color: #fff;
+    color: var(--othergrey);
+    font-family: "Manrope", sans-serif;
+}
+
+.inner-container {
+    margin: auto;
+    max-width: 1440px;
+}
+
+.main-menu {
+    display: flex;
+    flex-flow: column wrap;
+    margin-top: 1.5rem;
+    gap: 1.5rem;
+    padding: 0;
+}
+
+h1 {
+    font-size: 1.25rem;
+    font-family: "Nunito", sans-serif;
+}
+
+span {
+    color: var(--blue);
+}
+
+p {
+    font-size: 1.5rem;
+    font-family: "Manrope", sans-serif;
+    font-weight: bold;
+    border-bottom: .0625rem solid var(--lightergrey);
+    padding: .5rem 0;
+}
+
+.main-menu ul {
+    padding: 0;
+    list-style-type: none;
+}
+
+.main-menu li {
+    display: flex;
+    position: relative;
+}
+
+a {
+    text-decoration: none;
+    transition: all 0.3s;
+    font-size: 1rem;
+}
+
+a:hover,
+a:focus {
+    font-weight: bolder;
+}
+
+a:visited {
+    color: var(--othergrey);
+}
+
+header {
+    background-color: #fff;
+    color: var(--grey);
+    width: 14.5rem;
+    padding: 1rem;
+    border: 1px solid var(--lightergrey)
+}
+
+svg {
+    height: 1.6875rem;
+    fill: #fff;
+    color: var(--grey);
+}
+
+.main-menu li a {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    gap: 0.5rem;
+}
+
+.sub-menu {
+    position: absolute;
+    left: 9.625rem;
+    top: -1.125rem;
+    min-width: 174px;
+    background-color: #fff;
+    border-radius: .4375rem;
+    border: 1px solid var(--blue);
+    box-shadow: var(--lightergrey);
+    z-index: 1;
+    visibility: 0;
+    opacity: 0;
+}
+
+.sub-menu li {
+    font-size: 1.125rem;
+    border-bottom: .0625rem solid #eee;
+    margin: 0.5rem;
+    padding: 0.5rem 1rem;
+}
+
+.sub-menu li:last-of-type {
+    border-bottom: none;
+}
+
+.sub-menu li:hover a,
+.main-menu li:hover svg path {
+    color: var(--othergrey);
+    font-weight: bold;
+}
+
+.main-menu li:hover .sub-menu {
+    visibility: visible;
+    opacity: 1;
 }
